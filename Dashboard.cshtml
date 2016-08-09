@@ -1,0 +1,27 @@
+﻿@{
+
+    var db = Database.Open("SCOCSite");
+    var query = "Select * FROM Email WHERE Email_ID < 2000";
+
+    string[] members = { "AAO", "CSC", "NBC", "NSC", "TSC", "EAC", "PSC" };
+    // var t1 = members[0];
+    var t1 = "";
+}
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    @foreach (var row in db.Query(query))
+    {
+        @row.Email_ID
+        <br />
+    }
+
+    @t1
+</body>
+</html>
